@@ -55,10 +55,19 @@ function buildPanelContent(content) {
     const status = body.querySelector('h4 + p');
     if (status && !status.querySelector('a') && status.textContent.trim().length <= 40) {
       status.classList.add('tabs-showcase-product-status');
+      status.dataset.status = toClassName(status.textContent);
     }
     product.append(body);
     wrapper.append(product);
   }
+
+  // standalone "Learn more" links render as outlined pill buttons (global a.button.secondary)
+  wrapper.querySelectorAll('.tabs-showcase-app-body > p, .tabs-showcase-product-body > p').forEach((p) => {
+    const a = p.querySelector(':scope > a:only-child');
+    if (!a || a.querySelector('img') || p.textContent.trim() !== a.textContent.trim()) return;
+    p.classList.add('tabs-showcase-cta');
+    a.classList.add('button', 'secondary');
+  });
 
   return wrapper;
 }

@@ -1,5 +1,7 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
+const DATE_RE = /^([A-Z][a-z]{2,8}\.? \d{1,2}, \d{4})\s+(.+)$/;
+
 function optimizeImages(root) {
   root.querySelectorAll('picture > img').forEach((img) => {
     const url = new URL(img.src, window.location.href);
@@ -17,6 +19,38 @@ function markEyebrow(body) {
   }
 }
 
+/* link-only paragraphs become a row of pill buttons: first primary, rest outlined */
+function decorateActions(body) {
+  const ctas = [...body.querySelectorAll(':scope > p')].filter((p) => {
+    const a = p.querySelector('a[href]');
+    return a && !p.querySelector('picture') && p.textContent.trim() === a.textContent.trim();
+  });
+  if (!ctas.length) return;
+  const actions = document.createElement('div');
+  actions.className = 'cards-spotlight-actions';
+  ctas[0].before(actions);
+  ctas.forEach((p, i) => {
+    const a = p.querySelector('a[href]');
+    if (!a.classList.contains('button')) {
+      a.className = `button ${i === 0 ? 'primary' : 'secondary'}`;
+    }
+    p.className = 'button-wrapper';
+    actions.append(p);
+  });
+}
+
+/* "Aug 27, 2026 14 min" -> "Aug 27, 2026 &nbsp; 14 min", spaced like the source */
+function decorateMeta(body) {
+  const heading = body.querySelector('h1, h2, h3, h4, h5, h6');
+  if (!heading || !heading.querySelector('a')) return; // only on linked list cards
+  const meta = heading.nextElementSibling;
+  if (!meta || meta.tagName !== 'P' || meta.classList.contains('button-wrapper')) return;
+  meta.classList.add('cards-spotlight-meta');
+  if (meta.children.length) return;
+  const match = meta.textContent.trim().match(DATE_RE);
+  if (match) meta.textContent = `${match[1]} \u00a0 ${match[2]}`;
+}
+
 export default function decorate(block) {
   const ul = document.createElement('ul');
   [...block.children].forEach((row) => {
@@ -31,6 +65,8 @@ export default function decorate(block) {
       } else {
         cell.className = 'cards-spotlight-card-body';
         markEyebrow(cell);
+        decorateActions(cell);
+        decorateMeta(cell);
       }
       li.append(cell);
     });
@@ -40,7 +76,12 @@ export default function decorate(block) {
   });
 
   // featured card(s) first, list items stacked beside them
-  if (ul.querySelector('.cards-spotlight-featured')) block.classList.add('cards-spotlight-has-featured');
+  if (ul.querySelector('.cards-spotlight-featured')) {
+    block.classList.add('cards-spotlight-has-featured');
+    // list items pack at the top of the side column; the last row absorbs any slack
+    const items = ul.querySelectorAll('.cards-spotlight-item').length;
+    block.style.setProperty('--cards-spotlight-rows', items > 1 ? `repeat(${items - 1}, auto) 1fr` : '1fr');
+  }
   optimizeImages(ul);
   block.replaceChildren(ul);
 }

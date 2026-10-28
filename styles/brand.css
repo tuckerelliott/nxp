@@ -1,0 +1,52 @@
+/* NXP brand tokens — extracted from www.nxp.com (see migration-work/brand.json) */
+:root {
+  /* colors */
+  --background-color: #fff;
+  --text-color: #000;
+  --link-color: #215bd6;
+  --link-hover-color: #215bd6;
+  --light-color: #f7f5f1;
+  --dark-color: #686664;
+  --nxp-grey: #686664;
+  --nxp-rule: #d4cfc5;
+  --nxp-sand: #ebe7dd;
+  --nxp-paper: #f7f5f1;
+  --nxp-orange: #ff7400;
+  --nxp-orange-dark: #994600;
+  --nxp-gradient: linear-gradient(90deg, #fca600 10%, #69ca00 50%, #0eafe0 90%);
+  --nxp-btn-border-gradient: linear-gradient(90deg, #fca600 7%, #69ca00 19%, #0eafe0 38.5%, #000 60%);
+  --nxp-btn-border-gradient-light: linear-gradient(90deg, #fff 35%, #fca600 57%, #69ca00 83%, #0eafe0 95%);
+  --nxp-ease: cubic-bezier(0.04, 0, 0.2, 1);
+
+  /* fonts */
+  --body-font-family: poppins, poppins-fallback, sans-serif;
+  --heading-font-family: poppins, poppins-fallback, sans-serif;
+
+  /* body sizes */
+  --body-font-size-m: 16px;
+  --body-font-size-s: 14px;
+  --body-font-size-xs: 12px;
+  --body-line-height: 22.86px;
+
+  /* heading sizes (mobile) */
+  --heading-font-size-xxl: 36px;
+  --heading-font-size-xl: 28px;
+  --heading-font-size-l: 20px;
+  --heading-font-size-m: 16px;
+  --heading-font-size-s: 16px;
+  --heading-font-size-xs: 14px;
+
+  /* layout */
+  --content-max-width: 1140px;
+  --section-padding: 48px;
+  --nav-height: 64px;
+}
+
+@media (width >= 900px) {
+  :root {
+    --heading-font-size-xxl: 40px;
+    --heading-font-size-xl: 30px;
+    --heading-font-size-l: 20px;
+    --heading-font-size-m: 16px;
+  }
+}

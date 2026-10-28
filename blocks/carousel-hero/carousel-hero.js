@@ -140,6 +140,19 @@ function createSlide(row, slideIndex, id) {
   }
   if (!label) label = heading ? heading.textContent.trim() : `${slideIndex + 1}`;
 
+  // paragraphs after the heading: CTA (link-only) or description
+  if (heading) {
+    let el = heading.nextElementSibling;
+    while (el) {
+      if (el.tagName === 'P') {
+        const link = el.querySelector('a');
+        const linkOnly = link && el.textContent.trim() === link.textContent.trim();
+        el.classList.add(linkOnly ? 'carousel-hero-slide-cta' : 'carousel-hero-slide-description');
+      }
+      el = el.nextElementSibling;
+    }
+  }
+
   if (heading) {
     if (!heading.id) heading.id = `${slide.id}-title`;
     slide.setAttribute('aria-labelledby', heading.id);
