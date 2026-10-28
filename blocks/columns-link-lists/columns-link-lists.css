@@ -1,0 +1,45 @@
+.columns-link-lists .columns-link-lists-row {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.columns-link-lists .columns-link-lists-col {
+  min-width: 0;
+}
+
+.columns-link-lists .columns-link-lists-title {
+  padding-bottom: 8px;
+  border-bottom: 1px solid currentcolor;
+}
+
+.columns-link-lists .columns-link-lists-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.columns-link-lists .columns-link-lists-list li {
+  break-inside: avoid;
+  margin-bottom: 8px;
+}
+
+@media (width >= 600px) {
+  .columns-link-lists .columns-link-lists-list-multi {
+    column-count: 2;
+    column-gap: 32px;
+  }
+}
+
+@media (width >= 900px) {
+  .columns-link-lists .columns-link-lists-row {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+  }
+
+  /* first column 1/3, second 2/3 (it holds the two-column list) */
+  .columns-link-lists.columns-link-lists-2-cols .columns-link-lists-row {
+    grid-template-columns: 1fr 2fr;
+  }
+}

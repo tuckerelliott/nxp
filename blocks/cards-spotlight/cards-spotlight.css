@@ -1,0 +1,56 @@
+.cards-spotlight > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.cards-spotlight .cards-spotlight-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cards-spotlight .cards-spotlight-card-image {
+  line-height: 0;
+}
+
+.cards-spotlight .cards-spotlight-card-image p {
+  margin: 0;
+}
+
+.cards-spotlight .cards-spotlight-card-image img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.cards-spotlight .cards-spotlight-card-body {
+  padding: 16px 24px;
+}
+
+.cards-spotlight .cards-spotlight-eyebrow {
+  margin-bottom: 4px;
+}
+
+@media (width >= 900px) {
+  .cards-spotlight.cards-spotlight-has-featured > ul {
+    grid-template-columns: 2fr 1fr;
+    grid-auto-rows: auto;
+  }
+
+  .cards-spotlight.cards-spotlight-has-featured .cards-spotlight-featured {
+    grid-column: 1;
+    grid-row: 1 / span 4;
+  }
+
+  .cards-spotlight.cards-spotlight-has-featured .cards-spotlight-item {
+    grid-column: 2;
+  }
+
+  .cards-spotlight:not(.cards-spotlight-has-featured) > ul {
+    grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+  }
+}

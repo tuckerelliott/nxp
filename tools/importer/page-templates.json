@@ -1,0 +1,162 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "home",
+      "urls": [
+        "https://www.nxp.com/"
+      ],
+      "representativeUrl": "https://www.nxp.com/",
+      "description": "NXP homepage: hero carousel, application tabs, spotlight cards, design resources, corporate cards, careers banner and news",
+      "urlPattern": "/",
+      "blocks": [
+        {
+          "name": "carousel-hero",
+          "instances": [
+            "#homepage_slider_v4"
+          ]
+        },
+        {
+          "name": "tabs-showcase",
+          "instances": [
+            "div.applications-tabs > div.bd-body"
+          ]
+        },
+        {
+          "name": "cards-spotlight",
+          "instances": [
+            "div.card1-list.has-three.is-tertiary"
+          ]
+        },
+        {
+          "name": "columns-link-lists",
+          "instances": [
+            "div.listed-columns > div.row"
+          ]
+        },
+        {
+          "name": "columns-banner",
+          "instances": [
+            "div.listed-columns + div.market-card",
+            "div.market-card.mb3"
+          ]
+        },
+        {
+          "name": "cards-overlap",
+          "instances": [
+            "div.market-card.band-absolute"
+          ]
+        },
+        {
+          "name": "cards-news",
+          "instances": [
+            "div.whats-new-list"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "hero-carousel",
+          "selector": [
+            "div.homepage-content > div.homepage-slider.ts-slider",
+            "div.homepage-slider"
+          ],
+          "style": null,
+          "blocks": [
+            "carousel-hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "applications-tabs",
+          "selector": [
+            "div.homepage-content > div.container > div.applications-tabs",
+            "div.applications-tabs"
+          ],
+          "style": null,
+          "blocks": [
+            "tabs-showcase"
+          ],
+          "defaultContent": [
+            "div.applications-tabs > div.section-lead"
+          ]
+        },
+        {
+          "id": "section-3",
+          "name": "spotlight",
+          "selector": [
+            "div.homepage-content > div.container > div.band.component-container.cool-grey-xxlight"
+          ],
+          "style": "light-beige",
+          "blocks": [
+            "cards-spotlight"
+          ],
+          "defaultContent": [
+            "div.band.component-container.cool-grey-xxlight > div.section-lead"
+          ]
+        },
+        {
+          "id": "section-4",
+          "name": "start-designing",
+          "selector": [
+            "div.homepage-content > div.container > div.component-container.band:has(> div.listed-columns)"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-link-lists",
+            "columns-banner"
+          ],
+          "defaultContent": [
+            "div.listed-columns > div.section-lead"
+          ]
+        },
+        {
+          "id": "section-5",
+          "name": "we-are-nxp",
+          "selector": [
+            "div.homepage-content > div.container > div.block-topic",
+            "div.block-topic"
+          ],
+          "style": "orange",
+          "blocks": [
+            "cards-overlap"
+          ],
+          "defaultContent": [
+            "div.block-topic"
+          ]
+        },
+        {
+          "id": "section-6",
+          "name": "careers-banner",
+          "selector": [
+            "div.homepage-content > div.container > div.market-card.mb3",
+            "div.market-card.mb3"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-banner"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-7",
+          "name": "whats-new",
+          "selector": [
+            "div.homepage-content > div.container > div.band.cool-grey-xxlight:not(.component-container)"
+          ],
+          "style": "light-beige, centered",
+          "blocks": [
+            "cards-news"
+          ],
+          "defaultContent": [
+            "div.band.cool-grey-xxlight > ul.list-inline"
+          ]
+        }
+      ]
+    }
+  ]
+}

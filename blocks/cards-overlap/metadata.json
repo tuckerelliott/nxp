@@ -1,0 +1,18 @@
+{
+  "variantName": "cards-overlap",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "row of three corporate cards (image, heading, text, 1-2 CTAs) that overlap the end of a colored band above",
+    "description": "Orange (#FF7400) band with faint world-map line graphic. White multilingual paragraph with underlined 'We are NXP' link and two white-outline pill buttons. The orange band ends roughly halfway down the three cards below, which sit on white (overlap effect). Cards: image on top, bold H3, body text, outlined/black pill buttons."
+  },
+  "contentPattern": {
+    "structure": "one row per card; cell 1 = image; cell 2 = H3 title, paragraph, 1-2 CTA links",
+    "description": "Three look-alike items (image, heading, text, buttons) that flow and wrap."
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Corporate value cards placed directly after an intro section with a colored background.",
+  "reuseGuidance": "Generic image/heading/text/CTA card grid; the overlap effect is applied in the design pass.",
+  "sourceUrl": "https://www.nxp.com/"
+}

@@ -1,0 +1,18 @@
+{
+  "variantName": "tabs-showcase",
+  "baseBlock": "tabs",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "tabbed showcase of application areas, each panel pairing an application card with a featured product card",
+    "description": "White band. Large H2 with second line in orange/teal gradient text ('advance our world.'). Pill-shaped tab buttons with icons (active tab black fill, white text). Panel: left wide beige card (category title link, link list, outlined Learn more button, image on right half) and right narrow dark product card (chip image on white, title, status badge, description, outlined orange Learn more)."
+  },
+  "contentPattern": {
+    "structure": "one row per tab; cell 1 = tab label (may include an icon); cell 2 = H3 title link, list of links, Learn more link, image; then the product card starting at the product image/H4: H4 title, short status line, description, Learn more link",
+    "description": "Interactive tabbed component; every one of the 5 tab labels and its panel content (application card and product card, with images) is kept."
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Market/application tabs where each tab has a link list plus one featured product.",
+  "reuseGuidance": "Content without an H4 renders a single application card per panel, so it also works as a generic rich tab set.",
+  "sourceUrl": "https://www.nxp.com/"
+}

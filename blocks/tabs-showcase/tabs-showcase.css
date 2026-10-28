@@ -1,0 +1,110 @@
+.tabs-showcase .tabs-showcase-list {
+  display: flex;
+  gap: 8px;
+  max-width: 100%;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.tabs-showcase .tabs-showcase-tab {
+  flex: 0 0 max-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0.5em 1.25em;
+  border-radius: 999px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.tabs-showcase .tabs-showcase-tab img,
+.tabs-showcase .tabs-showcase-tab .icon {
+  width: 24px;
+  height: 24px;
+}
+
+.tabs-showcase .tabs-showcase-tab[aria-selected='true'] {
+  cursor: default;
+}
+
+.tabs-showcase .tabs-showcase-panel {
+  margin-top: 24px;
+}
+
+.tabs-showcase .tabs-showcase-panel[aria-hidden='true'] {
+  display: none;
+}
+
+.tabs-showcase .tabs-showcase-panel-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.tabs-showcase .tabs-showcase-app {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.tabs-showcase .tabs-showcase-app-body,
+.tabs-showcase .tabs-showcase-product-body {
+  padding: 24px;
+}
+
+.tabs-showcase .tabs-showcase-app-body ul {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+.tabs-showcase .tabs-showcase-app-image {
+  line-height: 0;
+}
+
+.tabs-showcase .tabs-showcase-app-image p {
+  margin: 0;
+}
+
+.tabs-showcase .tabs-showcase-app-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tabs-showcase .tabs-showcase-product {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.tabs-showcase .tabs-showcase-product-image {
+  margin: 0;
+  line-height: 0;
+  text-align: center;
+}
+
+.tabs-showcase .tabs-showcase-product-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.tabs-showcase .tabs-showcase-product-status {
+  display: inline-block;
+}
+
+@media (width >= 900px) {
+  .tabs-showcase .tabs-showcase-panel-content {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .tabs-showcase .tabs-showcase-app {
+    flex-direction: row;
+  }
+
+  .tabs-showcase .tabs-showcase-app-body,
+  .tabs-showcase .tabs-showcase-app-image {
+    flex: 1 1 50%;
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "variantName": "columns-banner",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "boxed promotional banner with a text column beside a photo",
+    "description": "White band. H2 'Start Designing Today with NXP' (hidden under the sticky header in the stitched screenshot). Two fixed columns of link lists (1/3 + 2/3, the second split into two link columns), each topped by a blue chevron CTA link and a bordered H3. Below: beige banner box, text left (~40%) with H3, text with inline link and orange pill CTA, photo right. | White band holding a beige 50/50 banner box: photo left, text right (H2 'Bright Minds. Bright Futures.', paragraph, outlined 'Careers at NXP' button)."
+  },
+  "contentPattern": {
+    "structure": "one row with two cells in visual order; text cell = heading, paragraph (inline links allowed), CTA link; image cell = a single picture. Put the image in the first cell for image-left banners",
+    "description": "Side-by-side layout: text column next to a photo in a boxed banner. | Side-by-side image and text in a boxed banner; same pattern as the registration banner with the image on the left."
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Registration and careers style promo banners.",
+  "reuseGuidance": "Any 50/50 text + image box; cell order controls image side.",
+  "sourceUrl": "https://www.nxp.com/"
+}

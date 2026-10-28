@@ -1,0 +1,18 @@
+{
+  "status": "success",
+  "url": "https://www.nxp.com/",
+  "path": "index",
+  "timestamp": "2026-10-28T16:34:58.550Z",
+  "title": "Automotive, IoT & Industrial Solutions | NXP Semiconductors",
+  "template": "home",
+  "blocks": [
+    "carousel-hero",
+    "tabs-showcase",
+    "cards-spotlight",
+    "columns-link-lists",
+    "columns-banner",
+    "columns-banner",
+    "cards-overlap",
+    "cards-news"
+  ]
+}

@@ -1,0 +1,50 @@
+.cards-overlap {
+  position: relative;
+}
+
+.cards-overlap > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+  gap: 24px;
+}
+
+.cards-overlap .cards-overlap-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cards-overlap .cards-overlap-card-image {
+  line-height: 0;
+}
+
+.cards-overlap .cards-overlap-card-image p {
+  margin: 0;
+}
+
+.cards-overlap .cards-overlap-card-image img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.cards-overlap .cards-overlap-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 16px 24px 24px;
+}
+
+/* push CTAs to the bottom so buttons align across cards */
+.cards-overlap .cards-overlap-card-body > :last-child:has(a) {
+  margin-top: auto;
+}
+
+@media (width >= 900px) {
+  .cards-overlap > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

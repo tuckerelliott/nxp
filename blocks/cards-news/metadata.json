@@ -1,0 +1,18 @@
+{
+  "variantName": "cards-news",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "news and blog feed cards with image, optional type label, linked title, date and author",
+    "description": "Light beige band. Three news cards in a row: dark image area with photo, white body (optional type eyebrow, bold linked title, bookmark icon, date and author link); third card fully dark with orange-highlighted title words. Centered row of two outlined pill buttons below."
+  },
+  "contentPattern": {
+    "structure": "one row per item; cell 1 = article image; cell 2 = optional eyebrow paragraph, H3 linked title, date paragraph, \"By\" author link paragraph",
+    "description": "Dynamic news/blog feed: items link to detail pages with dates and authors."
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Latest news / blog / press release teasers.",
+  "reuseGuidance": "Any dated, authored article teaser list.",
+  "sourceUrl": "https://www.nxp.com/"
+}

@@ -1,0 +1,18 @@
+{
+  "variantName": "carousel-hero",
+  "baseBlock": "carousel",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "full-bleed rotating homepage hero with one photo, eyebrow, title, description and CTA per slide, plus labelled progress indicators",
+    "description": "Full-bleed rotating hero, 4 slides, each a full-width photo with left-aligned dark overlay text (signpost eyebrow, H1, description, orange pill CTA). Bottom indicator bar with labeled progress segments (RAIN RFID, MCX A5, SDV, Tech Days); active segment orange. Photo background belongs to the block, so the section is not colored."
+  },
+  "contentPattern": {
+    "structure": "one row per slide; cell 1 = background image; cell 2 = optional short indicator label paragraph, eyebrow paragraph, H1/H2 title, description paragraph, CTA link. With two paragraphs before the heading the first becomes the indicator label; otherwise the heading text is used",
+    "description": "Interactive rotating component with 4 slides; each slide has its own full-bleed photo and text. Photo background belongs to the block."
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Top-of-page hero with 2+ rotating promotional slides. A single row renders as a static hero without controls.",
+  "reuseGuidance": "Use for any rotating full-width hero. For a single static hero prefer the hero block.",
+  "sourceUrl": "https://www.nxp.com/"
+}

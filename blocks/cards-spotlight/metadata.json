@@ -1,0 +1,18 @@
+{
+  "variantName": "cards-spotlight",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "topic spotlight with one featured card (image, two CTAs) and a stacked list of text-only article/video cards",
+    "description": "Full-width light beige (#EBE7DD) band. H2 left-aligned. Featured white card spans ~2/3 width (large image, 'Featured' eyebrow, H2-sized title, text, orange primary + outlined secondary buttons); right column stacks 4 white text-only link cards (type eyebrow, bold title, date + duration/author meta)."
+  },
+  "contentPattern": {
+    "structure": "one row per card; cell 1 = image (featured card only, leave empty for list cards); cell 2 = eyebrow paragraph (Featured/Video/Article), H3 title (linked on list cards), description or meta line, CTA links. A card with an image becomes the featured card",
+    "description": "Repeating content items that each link to a detail page with type, date and author/duration; the set changes over time, so it is a dynamic list (Cards). First card is featured (image, two CTAs)."
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Editorial spotlight sections mixing one featured item with 2-4 linked items.",
+  "reuseGuidance": "Without any image row it falls back to a regular card grid.",
+  "sourceUrl": "https://www.nxp.com/"
+}
