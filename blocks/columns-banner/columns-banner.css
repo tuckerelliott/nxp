@@ -1,15 +1,50 @@
+/* columns-banner: beige promo box, text beside a cover photo (source: .market-card) */
+.columns-banner {
+  box-shadow: rgb(0 0 0 / 10%) 1px 3px 5px 0;
+}
+
 .columns-banner .columns-banner-row {
   display: flex;
   flex-direction: column;
+  background-color: var(--nxp-sand);
+  box-shadow: rgb(0 0 0 / 10%) 0 1px 3px 0;
   overflow: hidden;
 }
 
 .columns-banner .columns-banner-text-col {
   box-sizing: border-box;
-  padding: 32px 24px;
+  padding: 30px 15px;
 }
 
+.columns-banner .columns-banner-text-col h3 {
+  margin: 0 0 11px;
+  font-size: 20px;
+  line-height: 22px;
+}
+
+.columns-banner .columns-banner-text-col h2 {
+  margin: 22px 0 11px;
+  font-size: 30px;
+  line-height: 33px;
+}
+
+.columns-banner .columns-banner-text-col p {
+  margin: 0 0 11px;
+}
+
+.columns-banner .columns-banner-text-col p.columns-banner-cta {
+  margin: 16px 0 0;
+}
+
+.columns-banner.columns-banner-image-first .columns-banner-text-col p.columns-banner-cta {
+  margin-bottom: 11px;
+}
+
+/* image always sits below the text on small screens */
 .columns-banner .columns-banner-img-col {
+  position: relative;
+  order: 1;
+  height: 250px;
   line-height: 0;
 }
 
@@ -17,10 +52,17 @@
   margin: 0;
 }
 
+.columns-banner .columns-banner-img-col picture {
+  position: absolute;
+  inset: 0;
+}
+
 .columns-banner .columns-banner-img-col img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 50%;
 }
 
 @media (width >= 900px) {
@@ -29,14 +71,24 @@
     align-items: stretch;
   }
 
-  .columns-banner .columns-banner-row > div {
-    flex: 1 1 50%;
+  .columns-banner .columns-banner-text-col {
+    flex: 0 0 33.3333%;
+    padding: 48px 30px;
   }
 
-  .columns-banner .columns-banner-text-col {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 48px;
+  .columns-banner .columns-banner-img-col {
+    flex: 1 1 0;
+    order: 0;
+    height: auto;
+    min-height: 250px;
+  }
+
+  /* image-first (careers) banner: 50/50 split, image column 30px narrower */
+  .columns-banner.columns-banner-image-first .columns-banner-text-col {
+    flex: 1 1 0;
+  }
+
+  .columns-banner.columns-banner-image-first .columns-banner-img-col {
+    flex: 0 0 calc(50% - 15px);
   }
 }

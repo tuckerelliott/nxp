@@ -1,1 +1,8 @@
 /* add global styles that can be loaded post LCP here */
+
+/* NXP orange band: faint world-map graphic (decorative, loaded after LCP) */
+main .section.orange {
+  background-image: url('images/nxp-map.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}

@@ -1,3 +1,4 @@
+/* columns-link-lists: CTA link + bordered H3 + link list per column (source: .listed-columns) */
 .columns-link-lists .columns-link-lists-row {
   display: flex;
   flex-direction: column;
@@ -8,9 +9,53 @@
   min-width: 0;
 }
 
+/* links share one type style: Poppins 18px / 25.71px */
+.columns-link-lists .columns-link-lists-col a:any-link {
+  font-size: 18px;
+  line-height: 25.7143px;
+}
+
+/* CTA: blue link with a chevron that nudges right on hover */
+.columns-link-lists .columns-link-lists-cta {
+  margin: 0;
+  font-size: 18px;
+  line-height: 25.7143px;
+}
+
+.columns-link-lists .columns-link-lists-cta a:any-link {
+  position: relative;
+  color: var(--link-color);
+}
+
+.columns-link-lists .columns-link-lists-cta a:hover {
+  text-decoration: none;
+}
+
+.columns-link-lists .columns-link-lists-cta a::after {
+  content: '';
+  position: relative;
+  display: inline-block;
+  width: 6px;
+  height: 0.85em;
+  background-color: currentcolor;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 11'%3E%3Cpath d='M.9.9l4.2 4.6-4.2 4.6' fill='none' stroke='%23000' stroke-width='1.3'/%3E%3C/svg%3E") center bottom / 6px 11px no-repeat;
+  vertical-align: baseline;
+  transform: translateX(3.825px);
+  transition: transform 0.2s var(--nxp-ease);
+}
+
+.columns-link-lists .columns-link-lists-cta a:hover::after {
+  transform: translateX(7.65px);
+}
+
+/* group heading with the rule above it */
 .columns-link-lists .columns-link-lists-title {
-  padding-bottom: 8px;
-  border-bottom: 1px solid currentcolor;
+  margin: 8px 0 12px;
+  border-top: 1px solid var(--nxp-rule);
+  padding-top: 32px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 22px;
 }
 
 .columns-link-lists .columns-link-lists-list {
@@ -21,25 +66,57 @@
 
 .columns-link-lists .columns-link-lists-list li {
   break-inside: avoid;
-  margin-bottom: 8px;
+  margin: 0 0 9px;
+  padding: 0;
+  font-size: 18px;
+  line-height: 25.7143px;
 }
 
-@media (width >= 600px) {
+.columns-link-lists .columns-link-lists-list li:last-child {
+  margin-bottom: 0;
+}
+
+.columns-link-lists .columns-link-lists-list a:any-link {
+  color: var(--text-color);
+}
+
+.columns-link-lists .columns-link-lists-list a:hover {
+  color: var(--text-color);
+  text-decoration: underline;
+}
+
+/* off-site links get an external-link icon instead of the chevron */
+.columns-link-lists .columns-link-lists-list a[href*="//"]:not([href*="//www.nxp.com"])::after,
+.columns-link-lists .columns-link-lists-cta a[href*="//"]:not([href*="//www.nxp.com"])::after {
+  content: '';
+  position: relative;
+  bottom: 1.5px;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: currentcolor;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23000' stroke-width='1.5'%3E%3Cpath d='M5 1.5H1.5v9h9V7'/%3E%3Cpath d='M6 6l4.6-4.6M6.8 1.2h4v4'/%3E%3C/svg%3E") center / 12px 12px no-repeat;
+  vertical-align: baseline;
+  transform: translateX(3px);
+}
+
+@media (width >= 769px) {
   .columns-link-lists .columns-link-lists-list-multi {
     column-count: 2;
-    column-gap: 32px;
+    column-gap: 15px;
   }
 }
 
-@media (width >= 900px) {
+@media (width >= 992px) {
   .columns-link-lists .columns-link-lists-row {
     display: grid;
     grid-auto-columns: 1fr;
     grid-auto-flow: column;
+    gap: 30px;
   }
 
-  /* first column 1/3, second 2/3 (it holds the two-column list) */
+  /* first column 4/12, second 8/12 (it holds the two-column list) */
   .columns-link-lists.columns-link-lists-2-cols .columns-link-lists-row {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: calc((100% + 30px) / 3 - 30px) 1fr;
   }
 }

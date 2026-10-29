@@ -384,3 +384,8 @@ main .carousel-hero .carousel-hero-slide-cta a:any-link:focus-visible {
     width: 1140px;
   }
 }
+
+/* the hero sits flush against the next section, as on the source */
+main > .section.carousel-hero-container {
+  padding-bottom: 0;
+}

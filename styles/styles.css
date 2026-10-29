@@ -25,8 +25,15 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
-  line-height: var(--body-line-height);
+  font-size: var(--body-font-size-s);
+  line-height: 20px;
+}
+
+@media (width >= 900px) {
+  body {
+    font-size: var(--body-font-size-m);
+    line-height: var(--body-line-height);
+  }
 }
 
 body.appear {
@@ -259,7 +266,7 @@ main > .section > div {
   box-sizing: border-box;
   max-width: var(--content-max-width);
   margin: auto;
-  padding: 0 15px;
+  padding: 0 30px;
 }
 
 main > .section:first-of-type {
@@ -279,6 +286,11 @@ main > .section > .default-content-wrapper > :first-child {
 /* section lead headings sit in an 8-of-12 column on the source */
 main > .section > .default-content-wrapper > h2 {
   max-width: 800px;
+}
+
+/* a section lead heading followed by a block */
+main > .section > .default-content-wrapper > h2:last-child {
+  margin-bottom: 20px;
 }
 
 /* section metadata */
