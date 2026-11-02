@@ -1,0 +1,70 @@
+{
+  "definitions": [
+    {
+      "title": "Cards Overlap",
+      "id": "cards-overlap",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Cards Overlap",
+              "filter": "cards-overlap"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Overlap Card",
+      "id": "cards-overlap-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Overlap Card",
+              "model": "cards-overlap-item"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "cards-overlap-item",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Alt Text",
+          "value": ""
+        },
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "cards-overlap",
+      "components": [
+        "cards-overlap-item"
+      ]
+    }
+  ]
+}

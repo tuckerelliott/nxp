@@ -1,0 +1,92 @@
+[
+  {
+    "id": "main",
+    "components": [
+      "section"
+    ]
+  },
+  {
+    "id": "section",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title",
+      "hero",
+      "cards",
+      "cards-news",
+      "cards-overlap",
+      "cards-spotlight",
+      "carousel-hero",
+      "tabs-showcase",
+      "columns",
+      "columns-banner",
+      "columns-link-lists",
+      "fragment",
+      "widget"
+    ]
+  },
+  {
+    "id": "cards-news",
+    "components": [
+      "cards-news-item"
+    ]
+  },
+  {
+    "id": "cards-overlap",
+    "components": [
+      "cards-overlap-item"
+    ]
+  },
+  {
+    "id": "cards-spotlight",
+    "components": [
+      "cards-spotlight-item"
+    ]
+  },
+  {
+    "id": "cards",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "carousel-hero",
+    "components": [
+      "carousel-hero-item"
+    ]
+  },
+  {
+    "id": "columns-banner",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "columns-link-lists",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "columns",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
+    ]
+  },
+  {
+    "id": "tabs-showcase",
+    "components": [
+      "tabs-showcase-item"
+    ]
+  }
+]

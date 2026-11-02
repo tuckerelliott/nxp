@@ -2,10 +2,10 @@
   "type": "da",
   "sites": {
     "nxp": {
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json",
       "previewOrg": "tuckerelliott",
       "previewSite": "nxp",
       "contentHostUrl": "https://content.da.live/tuckerelliott/nxp/",
-      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json",
       "botProtected": true
     }
   }
